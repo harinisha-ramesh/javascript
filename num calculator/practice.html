@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Num calculator</title>
+    <link rel="stylesheet" href="length.css">
+</head>
+<body>
+    <!--for giving <div id="wrapper"> in a short way write [div#wrapper]
+        if it for class write [div.wrapper]-->
+    <div id="wrapper">
+        <h2>Number calculator</h2>
+        <div class="inputdiv">
+            <input type="text" id="input" placeholder="Enter here">
+        </div>
+        <div>
+            <button type="submit" onclick="number()">calculate</button>
+        </div>
+        <div id="result"> 
+
+        </div>
+
+    </div>
+    <script>
+        function number(){
+            let num=document.getElementById('input').value
+            let split=num.split("")
+            
+            let num1=split[0] , num2=split[2]
+            let numStr1=(num1.join())
+            console.log(numStr1)
+            let numStr2=(num2.join()) 
+            
+        }
+        
+        
+    </script>
+    
+</body>
+</html>
