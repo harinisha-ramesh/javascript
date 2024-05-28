@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>length convertor</title>
+    <link rel="stylesheet" href="length.css">
+</head>
+<body>
+    <!--for giving <div id="wrapper"> in a short way write [div#wrapper]
+        if it for class write [div.wrapper]-->
+    <div id="wrapper">
+        <h2>cm to inches</h2>
+        <div class="inputdiv">
+            <input type="text" id="input" placeholder="degree in Fahrenheit">
+        </div>
+        <div>
+            <button type="submit" onclick="convert()">Convert to Fahrenheit</button>
+        </div>
+        <div id="result"> 
+
+        </div>
+
+    </div>
+    <script>
+        function convert(){
+
+            const celciusValue=Number(document.getElementById("input").value)
+            const fahrenheitValue= (celciusValue * 9/5)+32
+            const finalResult=document.getElementById("result")
+            finalResult.innerHTML = fahrenheitValue.toFixed(2) + " degree Fahrenheit"
+            /* tofixed is used to get the number of decimal value we need*/
+
+        }
+        
+    </script>
+    
+</body>
+</html>
