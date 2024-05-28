@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fd calculator</title>
+    <link rel="stylesheet" href="length.css">
+</head>
+<body>
+    <!--for giving <div id="wrapper"> in a short way write [div#wrapper]
+        if it for class write [div.wrapper]-->
+    <div id="wrapper">
+        <h2>Fd Rate calculator</h2>
+        <div class="inputdiv">
+            <input type="text" id="input" placeholder="tenture in month">
+        </div>
+        <div>
+            <button type="submit" onclick="fdRate()">calculate</button>
+        </div>
+        <div id="result"> 
+
+        </div>
+
+    </div>
+    <script>
+        function fdRate(){ 
+           const month= Number(document.getElementById("input").value)
+           let rate=0
+            if (month<3)
+                rate=5.8
+            else if (month>=3 && month <=6)
+                rate=6.5
+            else if (month>=7 && month<=9)
+                rate=6.8
+            else
+                rate=7
+   
+           const result=document.getElementById("result")
+           result.innerHTML = "Your interest rate is "+rate+"%"
+
+
+        }
+    </script>
+    
+</body>
+</html>
