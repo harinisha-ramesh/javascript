@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EB bill counter</title>
+    <link rel="stylesheet" href="length.css">
+</head>
+<body>
+    <!--for giving <div id="wrapper"> in a short way write [div#wrapper]
+        if it for class write [div.wrapper]-->
+    <div id="wrapper">
+        <h2>EB bill counter</h2>
+        <div class="inputdiv">
+            <input type="text" id="input" placeholder="Enter here">
+        </div>
+        <div>
+            <button type="submit" onclick="res()">calculate</button>
+        </div>
+        <div id="result"> 
+
+        </div>
+
+    </div>
+    <script>
+        function res(){
+         let num=Number(document.getElementById("input").value)
+         let amount 
+         if (num <=50){
+            amount=0.75
+        }
+         else if (num>=51 && num<=150){
+            let point1=(num-50)
+            amount=(50*0.75)+(point1*1.00)
+            }
+         else if (num>=151 && num<=250){   
+            let point1=(num-50) 
+            
+            let point2=(point1-100)
+            
+            let point3=(num-(100+50))
+            
+            amount= (50*0.75)+(point2*1.00)+(point3*1.30)
+            }
+         else{
+            let point1=(num-50)
+            let point2=(point1-100)
+            let point3=(point2-100)
+            let point4=(num-(50+100+100))
+            amount=(50*0.75)+(point2*1.00)+(point3*1.30)+(point4*1.50)
+         }  
+         document.getElementById("result").innerHTML=amount
+            
+                
+
+                
+
+        }
+        
+    </script>
+ 
+    
+</body>
+</html>
