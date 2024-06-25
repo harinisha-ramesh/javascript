@@ -19,3 +19,43 @@ function success(){
 function failure(){
     console.log("Sorry! Please try again")
 }
+
+//Example 
+let reachA = new Promise((resolve,reject)=>{
+    const reached = true
+    if(reached)  //no need to give curly brackets for this 
+        setTimeout(resolve,3000,"Meena reached")
+    
+    else
+        reject("Meena not reached")   
+})
+
+let reachB = new Promise((resolve,reject)=>{
+    const reached = true
+    if(reached)  //no need to give curly brackets for this 
+        setTimeout(resolve,3000,"Teena reached")
+    
+    else
+        reject("Teena not reached")   
+})
+
+let reachC = new Promise((resolve,reject)=>{
+    const reached = true
+    if(reached)  //no need to give curly brackets for this 
+        setTimeout(resolve,3000,"Heena reached")
+    
+    else
+        reject("Heena not reached")   
+})
+
+Promise.all([reachA,reachB,reachC])
+.then((message)=>console.log(message)) //Promise.all() will wait until all promises get resolve and then only it will display
+.catch((message)=>console.log(message)) // if any of the promise rejects it will reject all 
+
+Promise.allSettled([reachA,reachB,reachC]) //Fulfills when all promises settle
+.then((message)=>console.log(message)) //it will show the reult whether it is resolved or rejected
+.catch((message)=>console.log(message))
+
+Promise.any([reachA,reachB,reachC])      //fulfills when any of the promise fulfills
+.then((message)=>console.log(message))   //rejects when all of the promises rejects
+.catch((message)=>console.log(message))
